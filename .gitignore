@@ -1,0 +1,55 @@
+# --- Python Environment ---
+# We share the requirements.txt, NOT the actual library files
+.venv/
+.claude/
+.opencode/
+env/
+venv/
+ENV/
+bin/
+lib/
+develop-eggs/
+dist/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+doc/
+*.egg-info/
+.installed.cfg
+*.egg
+__pycache__/
+.env
+
+# --- Data (Privacy & Size) ---
+# We ignore raw data to stay within GitHub limits and maintain privacy
+data/*
+!data/processed_data_cube.csv
+*.xlsx
+*.xls
+*.json
+*.parquet
+
+# --- SQL & Databases ---
+# Ignore local database files (they are binary and shouldn't be on Git)
+*.db
+*.sqlite
+*.sqlite3
+*.sqlitedb
+
+# --- Jupyter Notebooks & VS Code ---
+# Ignore checkpoints and local VS Code settings
+.ipynb_checkpoints
+.vscode/
+.history/
+*.log
+
+# --- System Files ---
+# Junk files created by Windows or Mac
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local dev tooling ---
+.agents/
