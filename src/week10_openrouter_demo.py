@@ -83,7 +83,7 @@ for model in models_to_try:
 # %%
 # temperature and max_tokens are standard OpenAI-style params: they work
 # the same way across every model routed through OpenRouter.
-# temperaturate controls randomness (0 = deterministic, 1 = creative)
+# temperaturate controls randomness (0 = less random, 1 = more creative)
 # max_tokens controls the maximum length of the output (in tokens, not words).
 
 response = client.chat.completions.create(
@@ -212,7 +212,12 @@ response = client.chat.completions.create(
                 ),
             },
         ],
-        response_format=structured_schema,
+        extra_body={
+        "reasoning": {
+            "enabled": False
+            }
+        }
+
     )
 print(response.choices[0].message.content)
 
